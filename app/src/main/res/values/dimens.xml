@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="small_padding">8dp</dimen>
+    <dimen name="general_padding">16dp</dimen>
+
+    <dimen name="img_extra_large">72dp</dimen>
+    <dimen name="item_title_size">18sp</dimen>
+    <dimen name="item_desc_size">14sp</dimen>
+</resources>
