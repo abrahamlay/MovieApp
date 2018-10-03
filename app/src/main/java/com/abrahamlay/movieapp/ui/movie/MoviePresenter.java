@@ -6,8 +6,8 @@ import com.abrahamlay.movieapp.util.api.RemoteCallback;
 
 public class MoviePresenter implements MovieContract.MovieAction {
 
-    private MovieContract.MovieView view;
-    private MovieRepository movieRepository;
+    private final MovieContract.MovieView view;
+    private final MovieRepository movieRepository;
 
     public MoviePresenter(MovieContract.MovieView view, MovieRepository movieRepository) {
         this.view = view;

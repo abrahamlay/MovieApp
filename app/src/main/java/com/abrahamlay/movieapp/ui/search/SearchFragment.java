@@ -8,7 +8,6 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.View;
 
 import com.abrahamlay.movieapp.model.movie.ResultsItem;
 import com.abrahamlay.movieapp.model.search.SearchResult;
@@ -21,8 +20,6 @@ import com.abrahamlay.movieapp.ui.detail.DetailActivity;
 import com.abrahamlay.movieapp.util.app.Injector;
 import com.abrahamlay.movieapp.util.app.MyApplication;
 
-import java.util.List;
-
 import javax.inject.Inject;
 
 /**
@@ -31,6 +28,7 @@ import javax.inject.Inject;
 public class SearchFragment extends BaseListFragment<SearchPresenter> implements SearchContract.SearchView,
         OnItemClickListener {
     @Inject
+    private
     SearchRepository repository;
 
     private SearchPresenter presenter;
@@ -92,7 +90,7 @@ public class SearchFragment extends BaseListFragment<SearchPresenter> implements
 
 
     @Override
-    public void onItemClicked(View view, Object data, int position) {
+    public void onItemClicked(Object data) {
         ResultsItem item= (ResultsItem)data;
         startActivity(new Intent(getActivity(), DetailActivity.class)
                 .putExtra(Const.PARAM_RESULT_ITEM,item));

@@ -14,7 +14,7 @@ import com.abrahamlay.movieapp.R;
 
 public abstract class BaseActivity extends AppCompatActivity {
 
-    public void replaceFragment(Fragment fragment, boolean addToBackStack) {
+    protected void replaceFragment(Fragment fragment, boolean addToBackStack) {
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
         ft.setCustomAnimations(android.R.anim.fade_in, android.R.anim.fade_out, android.R.anim.fade_in, android.R.anim.fade_out)
                 .replace(R.id.container, fragment);

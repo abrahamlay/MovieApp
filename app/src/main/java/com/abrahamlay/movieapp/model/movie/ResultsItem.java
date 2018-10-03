@@ -214,7 +214,7 @@ public class ResultsItem implements Parcelable {
     public ResultsItem() {
     }
 
-    protected ResultsItem(Parcel in) {
+    private ResultsItem(Parcel in) {
         this.overview = in.readString();
         this.originalLanguage = in.readString();
         this.originalTitle = in.readString();

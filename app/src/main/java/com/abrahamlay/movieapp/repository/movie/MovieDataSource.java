@@ -14,7 +14,7 @@ import io.reactivex.schedulers.Schedulers;
 public class MovieDataSource implements MovieRepositoryContract {
 
     private final CompositeDisposable compositeDisposable;
-    private MovieService service;
+    private final MovieService service;
 
     public MovieDataSource(MovieService service) {
         this.service = service;

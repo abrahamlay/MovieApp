@@ -7,7 +7,7 @@ import com.abrahamlay.movieapp.ui.BaseView;
  * Created by abrahamlay on 16/08/2018.
  */
 
-public class SearchContract {
+class SearchContract {
     interface SearchView extends BaseView<SearchPresenter> {
         void onResultLoaded(SearchResult data);
     }

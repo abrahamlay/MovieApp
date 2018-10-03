@@ -12,9 +12,9 @@ import com.abrahamlay.movieapp.R;
  */
 
 public class EmptyViewHolder {
-    private View rootView;
-    private TextView tvMessage;
-    private ImageView icon;
+    private final View rootView;
+    private final TextView tvMessage;
+    private final ImageView icon;
 
     public EmptyViewHolder(View rootView) {
         this.rootView = rootView;
@@ -37,9 +37,8 @@ public class EmptyViewHolder {
         setMessage(R.string.movie_cant_be_found);
     }
 
-    public EmptyViewHolder setMessage(String text) {
+    public void setMessage(String text) {
         if (text != null) tvMessage.setText(text);
-        return this;
     }
 
     public EmptyViewHolder setMessage(Spanned text) {
@@ -47,9 +46,8 @@ public class EmptyViewHolder {
         return this;
     }
 
-    public EmptyViewHolder setMessage(int textResId) {
+    private void setMessage(int textResId) {
         tvMessage.setText(textResId);
-        return this;
     }
 
     public EmptyViewHolder setIcon(int iconResId) {

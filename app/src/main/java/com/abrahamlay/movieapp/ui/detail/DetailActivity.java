@@ -31,7 +31,7 @@ public class DetailActivity extends BaseActivity {
         initToolbar();
     }
 
-    public void initToolbar(){
+    private void initToolbar(){
         String url=String.format(MOVIE_THUMBNAIL_BASE_URL_EXTRA_LARGE, detail.getPosterPath());
         GlideHelper.showImage(url,ivMovie,this);
         setSupportActionBar(toolbar);
@@ -44,7 +44,7 @@ public class DetailActivity extends BaseActivity {
         initDetail();
     }
 
-    public void initDetail(){
+    private void initDetail(){
         replaceFragment(DetailFragment.newInstance(detail),false);
     }
 

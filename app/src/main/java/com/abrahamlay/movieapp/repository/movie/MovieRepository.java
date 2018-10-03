@@ -6,7 +6,7 @@ import com.abrahamlay.movieapp.util.api.RemoteCallback;
 
 public class MovieRepository implements MovieRepositoryContract {
 
-    private MovieDataSource movieDataSource;
+    private final MovieDataSource movieDataSource;
 
     public MovieRepository(MovieDataSource movieDataSource) {
         this.movieDataSource = movieDataSource;

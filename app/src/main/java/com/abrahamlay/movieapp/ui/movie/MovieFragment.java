@@ -6,10 +6,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.MenuItem;
-import android.view.View;
 
-import com.abrahamlay.movieapp.R;
 import com.abrahamlay.movieapp.model.movie.MovieResult;
 import com.abrahamlay.movieapp.model.movie.ResultsItem;
 import com.abrahamlay.movieapp.repository.movie.MovieRepository;
@@ -25,8 +22,9 @@ import javax.inject.Inject;
 public abstract class MovieFragment extends BaseListFragment<MoviePresenter> implements MovieContract.MovieView,
         OnItemClickListener {
     @Inject
+    private
     MovieRepository repository;
-    protected MoviePresenter presenter;
+    MoviePresenter presenter;
 
 
     @Override
@@ -63,7 +61,7 @@ public abstract class MovieFragment extends BaseListFragment<MoviePresenter> imp
     }
 
     @Override
-    public void onItemClicked(View view, Object data, int position) {
+    public void onItemClicked(Object data) {
         ResultsItem item= (ResultsItem)data;
         startActivity(new Intent(getActivity(), DetailActivity.class)
                 .putExtra(Const.PARAM_RESULT_ITEM,item));

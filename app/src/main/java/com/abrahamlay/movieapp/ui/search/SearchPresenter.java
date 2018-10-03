@@ -9,8 +9,8 @@ import com.abrahamlay.movieapp.util.api.RemoteCallback;
  */
 
 public class SearchPresenter implements SearchContract.SearchAction {
-    private SearchContract.SearchView view;
-    private SearchRepository repository;
+    private final SearchContract.SearchView view;
+    private final SearchRepository repository;
 
     public SearchPresenter(SearchContract.SearchView view, SearchRepository repository) {
         this.view = view;

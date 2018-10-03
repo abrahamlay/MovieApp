@@ -1,7 +1,6 @@
 package com.abrahamlay.movieapp.util.api;
 
 
-import com.abrahamlay.movieapp.model.search.SearchResult;
 import com.abrahamlay.movieapp.ui.BaseView;
 import com.jakewharton.retrofit2.adapter.rxjava2.HttpException;
 
@@ -22,7 +21,7 @@ import okhttp3.ResponseBody;
  */
 public abstract class CallbackWrapper<T> extends DisposableObserver<T> {
 
-    private BaseView view;
+    private final BaseView view;
 
     public CallbackWrapper(BaseView view) {
         this.view = view;

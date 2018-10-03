@@ -6,7 +6,7 @@ import android.support.v4.app.FragmentStatePagerAdapter;
 
 import java.util.List;
 
-public class TabAdapter extends FragmentStatePagerAdapter {
+class TabAdapter extends FragmentStatePagerAdapter {
     private final List<Fragment> items;
     private final List<String> titles;
 

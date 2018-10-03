@@ -1,9 +1,6 @@
 package com.abrahamlay.movieapp.ui.movie;
 
-import android.content.Context;
-
 import com.abrahamlay.movieapp.ui.movie.MovieFragment;
-import com.abrahamlay.movieapp.util.app.Injector;
 import com.abrahamlay.movieapp.util.app.MyApplication;
 
 public class UpcomingFragment extends MovieFragment {

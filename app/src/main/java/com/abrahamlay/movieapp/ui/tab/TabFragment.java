@@ -25,7 +25,7 @@ public abstract class TabFragment extends BaseFragment {
     protected List<Fragment> fragments;
     protected List<String> titles;
 
-    public abstract void initFragmentAndTitle();
+    protected abstract void initFragmentAndTitle();
 
     @Nullable
     @Override

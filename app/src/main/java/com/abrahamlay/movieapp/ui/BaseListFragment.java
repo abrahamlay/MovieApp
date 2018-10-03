@@ -2,7 +2,6 @@ package com.abrahamlay.movieapp.ui;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,7 +11,6 @@ import android.widget.Toast;
 
 import com.abrahamlay.movieapp.R;
 import com.abrahamlay.movieapp.model.movie.ResultsItem;
-import com.abrahamlay.movieapp.ui.search.SearchPresenter;
 import com.abrahamlay.movieapp.ui.widget.EmptyViewHolder;
 import com.abrahamlay.movieapp.util.api.ApiConfig;
 
@@ -31,10 +29,10 @@ public abstract class BaseListFragment<T> extends BaseFragment implements BaseVi
 
     protected List<ResultsItem> mItemList;
 
-    protected ProgressBar progressBar;
+    private ProgressBar progressBar;
     protected int pageToLoad = 1;
 
-    protected EmptyViewHolder emptyViewHolder;
+    private EmptyViewHolder emptyViewHolder;
     protected RecyclerView rvList;
 
     protected abstract void loadData();
@@ -43,7 +41,7 @@ public abstract class BaseListFragment<T> extends BaseFragment implements BaseVi
 
     protected abstract boolean isEndlessScrolling();
 
-    public void initState() {
+    protected void initState() {
         pageToLoad = 1;
         adapter = null;
         emptyViewHolder.hide();
@@ -84,7 +82,7 @@ public abstract class BaseListFragment<T> extends BaseFragment implements BaseVi
         }
     }
 
-    protected void setEmptyRvList() {
+    private void setEmptyRvList() {
         rvList.setVisibility(View.GONE);
         emptyViewHolder.show();
     }

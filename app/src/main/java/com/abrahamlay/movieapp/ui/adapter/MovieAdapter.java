@@ -19,8 +19,8 @@ import java.util.List;
 
 public class MovieAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
-    private List<ResultsItem> mItemList;
-    private OnItemClickListener mListener;
+    private final List<ResultsItem> mItemList;
+    private final OnItemClickListener mListener;
 
 
     public MovieAdapter(List<ResultsItem> mItemList, OnItemClickListener mListener) {
@@ -45,7 +45,7 @@ public class MovieAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
         SearchResultViewHolder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mListener.onItemClicked(SearchResultViewHolder.itemView,item,SearchResultViewHolder.getAdapterPosition());
+                mListener.onItemClicked(item);
             }
         });
 
