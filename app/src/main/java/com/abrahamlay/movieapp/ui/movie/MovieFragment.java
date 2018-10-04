@@ -22,7 +22,6 @@ import javax.inject.Inject;
 public abstract class MovieFragment extends BaseListFragment<MoviePresenter> implements MovieContract.MovieView,
         OnItemClickListener {
     @Inject
-    private
     MovieRepository repository;
     MoviePresenter presenter;
 

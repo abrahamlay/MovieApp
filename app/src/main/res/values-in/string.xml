@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MovieApp</string>
+
+    <string name="network_error">Mohon cek koneksi internet Anda.</string>
+    <string name="timeout_error">Koneksi terputus, mohon coba lagi.</string>
+    <string name="error_limit_request">Permintaanmu mencapai batas (40 permintaan) dalam satu menit, mohon coba lagi nanti</string>
+    <string name="error_empty_query">Query Anda kosong, mohon masukan query pencarian.</string>
+    <string name="movie_cant_be_found">Maaf, film tidak ditemukan</string>
+    <string name="hint">Cari Film</string>
+    <string name="movie_title">Judul</string>
+
+    <string name="now_playing">Sedang diputar</string>
+    <string name="upcoming">Mendatang</string>
+    <string name="search">Pencarian</string>
+    <string name="language">Bahasa</string>
+</resources>

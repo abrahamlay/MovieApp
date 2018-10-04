@@ -28,7 +28,6 @@ import javax.inject.Inject;
 public class SearchFragment extends BaseListFragment<SearchPresenter> implements SearchContract.SearchView,
         OnItemClickListener {
     @Inject
-    private
     SearchRepository repository;
 
     private SearchPresenter presenter;

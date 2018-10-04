@@ -19,7 +19,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.detail.DetailActivity"/>
+        <activity
+            android:theme="@style/AppTheme.NoActionBar"
+            android:name=".ui.detail.DetailActivity"/>
         <activity
             android:theme="@style/AppTheme.NoActionBar"
             android:name=".ui.search.SearchActivity"/>

@@ -25,6 +25,7 @@ import com.abrahamlay.movieapp.ui.BaseActivity;
           toolbar=findViewById(R.id.toolbar);
           searchView =findViewById(R.id.sv_main);
           setSupportActionBar(toolbar);
+          getSupportActionBar().setDisplayHomeAsUpEnabled(true);
       }
 
        public SearchView getSearchView() {

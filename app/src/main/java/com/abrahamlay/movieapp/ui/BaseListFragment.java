@@ -2,6 +2,7 @@ package com.abrahamlay.movieapp.ui;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -22,7 +23,7 @@ import java.util.List;
  * Created by abrahamlay on 17/08/2018.
  */
 
-public abstract class BaseListFragment<T> extends BaseFragment implements BaseView<T> {
+public abstract class BaseListFragment<T> extends BaseFragment implements BaseView<T>,SwipeRefreshLayout.OnRefreshListener {
 
 
     protected RecyclerView.Adapter adapter;
@@ -34,12 +35,19 @@ public abstract class BaseListFragment<T> extends BaseFragment implements BaseVi
 
     private EmptyViewHolder emptyViewHolder;
     protected RecyclerView rvList;
+    private SwipeRefreshLayout swipeRefresh;
 
     protected abstract void loadData();
 
     protected abstract RecyclerView.LayoutManager getLayoutManager();
 
     protected abstract boolean isEndlessScrolling();
+
+    @Override
+    public void onRefresh() {
+        initState();
+        loadData();
+    }
 
     protected void initState() {
         pageToLoad = 1;
@@ -52,7 +60,8 @@ public abstract class BaseListFragment<T> extends BaseFragment implements BaseVi
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_main, container, false);
+        View view = inflater.inflate(R.layout.fragment_list, container, false);
+        swipeRefresh=view.findViewById(R.id.refresh);
         rvList = view.findViewById(R.id.rv_list);
         progressBar = view.findViewById(R.id.progress_bar);
         View emptyView = view.findViewById(R.id.empty_view);
@@ -65,6 +74,7 @@ public abstract class BaseListFragment<T> extends BaseFragment implements BaseVi
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         initState();
+        swipeRefresh.setOnRefreshListener(this);
 
     }
 
@@ -72,6 +82,7 @@ public abstract class BaseListFragment<T> extends BaseFragment implements BaseVi
     @Override
     public void showProgressBar(boolean active) {
         progressBar.setVisibility(active ? View.VISIBLE : View.GONE);
+        swipeRefresh.setRefreshing(active);
     }
 
     @Override
