@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">SearchMovie</string>
+    <string name="app_name">MovieApp</string>
 
     <string name="network_error">Please, check your internet connection.</string>
     <string name="timeout_error">Request Timeout, Please try again.</string>
@@ -14,8 +14,5 @@
     <string name="search">Search</string>
     <string name="language">Language</string>
     <string name="select_language">Select Language</string>
-    <string name="your_app_language_will_change">Your app language will change</string>
-    <string name="confirm">Confirm</string>
-    <string name="cancel">Cancel</string>
 
 </resources>
