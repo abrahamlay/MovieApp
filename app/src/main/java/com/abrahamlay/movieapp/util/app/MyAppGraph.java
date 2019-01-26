@@ -1,6 +1,8 @@
 package com.abrahamlay.movieapp.util.app;
 
 
+import com.abrahamlay.movieapp.ui.favorite.FavoriteMovieFragment;
+import com.abrahamlay.movieapp.ui.favorite.FavoriteMovieFragmentImpl;
 import com.abrahamlay.movieapp.ui.movie.MovieFragment;
 import com.abrahamlay.movieapp.ui.movie.UpcomingFragment;
 import com.abrahamlay.movieapp.ui.search.SearchFragment;
@@ -16,7 +18,11 @@ public interface MyAppGraph {
 
     void inject(SearchFragment searchFragment);
     void inject(MovieFragment movieFragment);
+
     void inject(NowPlayingFragment movieFragment);
+
     void inject(UpcomingFragment movieFragment);
+
+    void inject(FavoriteMovieFragment favoriteMovieFragment);
 
 }

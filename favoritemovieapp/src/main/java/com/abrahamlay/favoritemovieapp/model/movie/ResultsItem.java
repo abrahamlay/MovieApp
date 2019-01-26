@@ -55,8 +55,9 @@ public class ResultsItem implements Parcelable {
 	@SerializedName("vote_count")
 	private int voteCount;
 
-	public void setOverview(String overview){
+	public ResultsItem setOverview(String overview){
 		this.overview = overview;
+		return this;
 	}
 
 	public String getOverview(){
@@ -87,8 +88,9 @@ public class ResultsItem implements Parcelable {
 		return video;
 	}
 
-	public void setTitle(String title){
+	public ResultsItem setTitle(String title){
 		this.title = title;
+		return this;
 	}
 
 	public String getTitle(){
@@ -119,8 +121,10 @@ public class ResultsItem implements Parcelable {
 		return backdropPath;
 	}
 
-	public void setReleaseDate(String releaseDate){
+	public ResultsItem setReleaseDate(String releaseDate){
 		this.releaseDate = releaseDate;
+
+		return this;
 	}
 
 	public String getReleaseDate(){

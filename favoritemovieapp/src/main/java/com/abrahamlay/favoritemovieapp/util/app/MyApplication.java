@@ -6,7 +6,6 @@ import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 
-import com.abrahamlay.movieapp.language_preferance.LanguagePrefUtil;
 
 /**
  * Created by abrahamlay on 15/08/2018.
@@ -29,7 +28,6 @@ public class MyApplication extends Application {
 
         instance=this;
 
-        sp=getSharedPreferences(LanguagePrefUtil.LANG_SETTINGS,MODE_PRIVATE);
 
         // Dagger
         appGraph = Injector.create(this);

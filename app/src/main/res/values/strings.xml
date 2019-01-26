@@ -14,5 +14,6 @@
     <string name="search">Search</string>
     <string name="language">Language</string>
     <string name="select_language">Select Language</string>
+    <string name="favorite">Favorite</string>
 
 </resources>

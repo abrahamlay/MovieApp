@@ -1,7 +1,6 @@
 package com.abrahamlay.favoritemovieapp.util.app;
 
-import com.abrahamlay.movieapp.repository.RepositoryModule;
-import com.abrahamlay.movieapp.util.api.ApiModule;
+
 
 import javax.inject.Singleton;
 
@@ -13,9 +12,7 @@ import dagger.Component;
 
 @Component(
         modules = {
-                MyAppModule.class,
-                ApiModule.class,
-                RepositoryModule.class
+                MyAppModule.class
         }
 )
 

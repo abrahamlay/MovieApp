@@ -1,4 +1,4 @@
-package com.abrahamlay.favoritemovieapp.db;
+package com.abrahamlay.movieapp.db;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -6,13 +6,17 @@ import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 
-
-import com.abrahamlay.favoritemovieapp.model.movie.ResultsItem;
+import com.abrahamlay.movieapp.model.movie.ResultsItem;
 
 import java.util.ArrayList;
 
 import static android.provider.BaseColumns._ID;
-import static com.abrahamlay.favoritemovieapp.db.DatabaseContract.MovieColumns.*;
+import static com.abrahamlay.movieapp.db.DatabaseContract.MovieColumns.DATE;
+import static com.abrahamlay.movieapp.db.DatabaseContract.MovieColumns.DESCRIPTION;
+
+import static com.abrahamlay.movieapp.db.DatabaseContract.MovieColumns.POPULARITY;
+import static com.abrahamlay.movieapp.db.DatabaseContract.MovieColumns.TABLE_NAME;
+import static com.abrahamlay.movieapp.db.DatabaseContract.MovieColumns.TITLE;
 
 public class MovieHelper {
     private static String DATABASE_TABLE = TABLE_NAME;
@@ -83,6 +87,7 @@ public class MovieHelper {
      */
     public long insert(ResultsItem item) {
         ContentValues initialValues = new ContentValues();
+        initialValues.put(_ID,item.getId());
         initialValues.put(TITLE, item.getTitle());
         initialValues.put(DESCRIPTION, item.getOverview());
         initialValues.put(DATE, item.getReleaseDate());
@@ -98,6 +103,7 @@ public class MovieHelper {
      */
     public int update(ResultsItem item) {
         ContentValues args = new ContentValues();
+        args.put(_ID,item.getId());
         args.put(TITLE, item.getTitle());
         args.put(DESCRIPTION, item.getOverview());
         args.put(DATE, item.getReleaseDate());
@@ -135,6 +141,29 @@ public class MovieHelper {
                 , null
                 , null
                 , null);
+    }
+
+    public ResultsItem selectItemById(String Id){
+        ResultsItem item=null;
+        Cursor cursor= queryByIdProvider(Id);
+
+        cursor.moveToFirst();
+        if (cursor.getCount() > 0) {
+            do {
+                item = new ResultsItem();
+                item.setId(cursor.getInt(cursor.getColumnIndexOrThrow(_ID)));
+                item.setTitle(cursor.getString(cursor.getColumnIndexOrThrow(TITLE)));
+                item.setOverview(cursor.getString(cursor.getColumnIndexOrThrow(DESCRIPTION)));
+                item.setReleaseDate(cursor.getString(cursor.getColumnIndexOrThrow(DATE)));
+                item.setPopularity(cursor.getDouble(cursor.getColumnIndexOrThrow(POPULARITY)));
+
+                cursor.moveToNext();
+
+            } while (!cursor.isAfterLast());
+        }
+        cursor.close();
+
+        return item;
     }
 
     /**

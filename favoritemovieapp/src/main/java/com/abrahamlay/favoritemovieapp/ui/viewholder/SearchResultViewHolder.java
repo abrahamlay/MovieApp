@@ -7,12 +7,12 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.abrahamlay.movieapp.R;
-import com.abrahamlay.movieapp.model.movie.ResultsItem;
-import com.abrahamlay.movieapp.util.DateFormater;
-import com.abrahamlay.movieapp.util.GlideHelper;
+import com.abrahamlay.favoritemovieapp.R;
+import com.abrahamlay.favoritemovieapp.model.movie.ResultsItem;
+import com.abrahamlay.favoritemovieapp.util.DateFormater;
+import com.abrahamlay.favoritemovieapp.util.GlideHelper;
 
-import static com.abrahamlay.movieapp.ui.Const.MOVIE_THUMBNAIL_BASE_URL_EXTRA_SMALL;
+import static com.abrahamlay.favoritemovieapp.ui.Const.MOVIE_THUMBNAIL_BASE_URL_EXTRA_SMALL;
 
 public class SearchResultViewHolder extends RecyclerView.ViewHolder{
 

@@ -1,5 +1,8 @@
 package com.abrahamlay.movieapp.util.api;
 
+import android.content.Context;
+
+import com.abrahamlay.movieapp.db.MovieHelper;
 import com.abrahamlay.movieapp.repository.movie.MovieService;
 import com.abrahamlay.movieapp.repository.search.SearchService;
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
@@ -50,5 +53,10 @@ public class ApiModule {
     @Provides
     public MovieService provideMovieService(Retrofit retrofit){
         return retrofit.create(MovieService.class);
+    }
+
+    @Provides
+    public MovieHelper provideMovieHelper(Context context){
+        return new MovieHelper(context);
     }
 }

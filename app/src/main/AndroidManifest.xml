@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.abrahamlay.movieapp">
+    <uses-permission android:name="android.permissions.READ_DATABASE"/>
+    <uses-permission android:name="android.permissioms.WRITE_DATABASE"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <permission android:name="com.abrahamlay.movieapp.READ_DATABASE" android:protectionLevel="normal" />
+    <permission android:name="com.abrahamlay.movieapp.WRITE_DATABASE" android:protectionLevel="normal" />
 
     <application
         android:name=".util.app.MyApplication"
@@ -25,6 +29,14 @@
         <activity
             android:theme="@style/AppTheme.NoActionBar"
             android:name=".ui.search.SearchActivity"/>
+        <provider
+            android:authorities="com.abrahamlay.movieapp"
+            android:name=".provider.MovieProvider"
+            android:exported="true"
+            android:readPermission="com.abrahamlay.movieapp.READ_DATABASE"
+            android:writePermission="com.abrahamlay.movieapp.WRITE_DATABASE"
+            android:grantUriPermissions="true"/>
     </application>
+
 
 </manifest>

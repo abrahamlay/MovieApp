@@ -1,4 +1,4 @@
-package com.abrahamlay.favoritemovieapp.db;
+package com.abrahamlay.movieapp.db;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;

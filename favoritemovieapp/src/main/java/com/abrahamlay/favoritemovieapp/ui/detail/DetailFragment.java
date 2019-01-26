@@ -4,7 +4,11 @@ package com.abrahamlay.favoritemovieapp.ui.detail;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -18,7 +22,12 @@ public class DetailFragment extends Fragment {
 
 
     private ResultsItem detailMovie;
+
     private TextView tvOverview;
+
+    private boolean isFavorite=false;
+
+    private Menu menuInflater;
 
 
     public DetailFragment() {
@@ -58,5 +67,48 @@ public class DetailFragment extends Fragment {
 
     private void initDetail() {
         tvOverview.setText(detailMovie.getOverview());
+    }
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        inflater.inflate(R.menu.menu_item_detail,menu);
+        menuInflater=menu;
+        setFavorite();
+    }
+
+    private void setFavorite() {
+        if(isFavorite){
+            menuInflater.getItem(0).setIcon(ContextCompat.getDrawable(getContext(),R.drawable.ic_menu_favorite_fill_white));
+        }else{
+            menuInflater.getItem(0).setIcon(ContextCompat.getDrawable(getContext(),R.drawable.ic_menu_favorite_blank_white));
+        }
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.action_favorite:
+                if(isFavorite) removeFromFavorite();
+                else addToFavorite();
+
+                isFavorite=!isFavorite;
+                setFavorite();
+
+                break;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    private void favoriteState(){
+
+
+    }
+
+    private void addToFavorite() {
+
+    }
+
+    private void removeFromFavorite() {
+
     }
 }
